@@ -1,0 +1,31 @@
+
+.officerheader {
+    font-family: Century Gothic;
+    font-weight: bold;
+}
+.officer h3 {
+    font-family: Century Gothic;
+    font-weight: bold;
+    padding-left: 1cm;
+}
+.officer p {
+    font-family: Century Gothic;
+    text-align: justify;
+    text-justify: inter-word;
+    padding-left: 1cm;
+    padding-right: 1cm;
+}
+.Officerinfo img {
+    
+    width: 200px;
+    height: 220px;
+    border-radius: 20%;
+    padding-top: 3px;
+}
+.Officerinfo .name {
+    font-weight: bold;
+}
+.Officerinfo .position {
+    font-style: italic;
+    margin-top: -20px;
+}
