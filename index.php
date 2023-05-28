@@ -208,7 +208,7 @@ a.jqte_tool_label.unselectable {
                 </div>
             </div>
             <br>
-            <div class="container"><div class="small text-center text-white">Copyright © 2022 - <?php echo $_SESSION['system']['name'] ?> | <a href="" target="_blank"></a></div></div>
+            <div class="container p-5"><div class="text-center text-white">Copyright © 2022 - <?php echo $_SESSION['system']['name'] ?> | <a href="" target="_blank"></a></div></div>
         </footer>
         
        <?php include('footer.php') ?>

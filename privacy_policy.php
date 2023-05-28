@@ -9,8 +9,8 @@
     </div>
 </header>
 
-<section class="page-section py-3 ">
-    <div class="container-fluid mx-3">
+<section class="">
+    <div class="container-fluid bg-theme p-4">
         <h3 class=" text-center my-1" style="margin-top:-20%">Privacy Policy</h3>
         <!--- Start the Privacy Policy Here -->
         <pre>This Privacy Policy outlines the practices and procedures followed by [Your Organization] regarding the collection, use, and disclosure of personal information from users of the Alumni Tracking System. 

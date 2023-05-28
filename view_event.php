@@ -78,7 +78,7 @@ while($row = $commits->fetch_assoc()){
             </div>
 </header>
 <section></section>
-<div class="container">
+<div class="container-fluid p-4 bg-theme">
 	<div class="col-lg-12">
 		<div class="card mt-4 mb-4">
 			<div class="card-body">

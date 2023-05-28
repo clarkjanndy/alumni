@@ -29,7 +29,7 @@ include 'admin/db_connect.php';
                 </div>
             </div>
         </header>
-            <div class="container mt-3 pt-2">
+            <div class="container-fluid p-4 bg-theme">
                <div class="col-lg-12">
                    <div class="card mb-4">
                         <div class="card-body">
