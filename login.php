@@ -1,4 +1,4 @@
-<div class="container pt-lg-md"><br><br><br><br>
+<div class="container-fluid p-5 bg-theme"><br><br><br><br>
 <br><br>
 	<div class="row justify-content-center">
 		<div class="col-lg-4" >
@@ -9,11 +9,11 @@
 					<form action="" id="login-frm">
 						<div class= "" class="form-group">
 							<label for="" class="control-label">Email</label>
-							<input type="email" name="username" required="" class="form-control">
+							<input type="email" name="username" required="" class="form-control" placeholder="Email">
 						</div>
 						<div class= "" class="form-group">
 							<label for="" class="control-label">Password</label>
-							<input type="password" name="password" required="" class="form-control">						
+							<input type="password" name="password" required="" class="form-control" placeholder="Password">						
 						</div><br>
 						<button class="button btn btn-info w-100">Login</button><br><br>
 						<hr>

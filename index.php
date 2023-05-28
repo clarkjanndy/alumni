@@ -53,8 +53,21 @@
   body, footer {
     background: #000000e6 !important;
 }
- 
 
+.bg-theme {
+    background-color: #D7E2EF;
+}
+
+.bg-theme-dark{
+  background: #4267B2;
+}
+
+.text-theme {
+   color: #4267B2;
+}
+
+
+ 
 a.jqte_tool_label.unselectable {
     height: auto !important;
     min-width: 4rem !important;
@@ -70,7 +83,7 @@ a.jqte_tool_label.unselectable {
         <div class="toast-body text-white">
         </div>
       </div>
-        <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3 small p-0" id="mainNav">
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3 small p-0" id="mainNav" style="background: 	#4267B2 ">
             <div class="container-fluid">
                 <img src="./assets/img/bcc_logo2.png" width="40px" height="40px" class="mr-2">
                 <a class="navbar-brand js-scroll-trigger" href="./"><?php echo $_SESSION['system']['name'] ?></a>
@@ -174,28 +187,28 @@ a.jqte_tool_label.unselectable {
     </div>
   </div>
   <div id="preloader"></div>
-        <footer class=" py-5">
-              <div class="container"><div class="small text-center text-muted">
+        <footer class="">
+              <div class="container-fluid bg-theme-dark"><div class="small text-center text-muted">
                 <div class="row justify-content-center">
                     <div class="col-lg-8 text-center">
-                        <h2 class="mt-0 text-white">Contact us</h2>
-                        <hr class="divider my-4" />
+                        <h2 class="mt-3 text-white">Contact us</h2>
+        
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-lg-4 ml-auto text-center mb-5 mb-lg-0">
-                        <i class="fas fa-phone fa-3x mb-3 text-muted"></i>
+                        <i class="fas fa-phone fa-3x mb-3 text-white"></i>
                         <div class="text-white"><?php echo $_SESSION['system']['contact'] ?></div>
                     </div>
                     <div class="col-lg-4 mr-auto text-center">
-                        <i class="fas fa-envelope fa-3x mb-3 text-muted"></i>
+                        <i class="fas fa-envelope fa-3x mb-3 text-white"></i>
                         <!-- Make sure to change the email address in BOTH the anchor text and the link target below!-->
-                        <a class="d-block" href="mailto:<?php echo $_SESSION['system']['email'] ?>"><?php echo $_SESSION['system']['email'] ?></a>
+                        <a class="d-block text-white" href="mailto:<?php echo $_SESSION['system']['email'] ?>"><?php echo $_SESSION['system']['email'] ?></a>
                     </div>
                 </div>
             </div>
             <br>
-            <div class="container"><div class="small text-center text-muted">Copyright © 2022 - <?php echo $_SESSION['system']['name'] ?> | <a href="" target="_blank"></a></div></div>
+            <div class="container"><div class="small text-center text-white">Copyright © 2022 - <?php echo $_SESSION['system']['name'] ?> | <a href="" target="_blank"></a></div></div>
         </footer>
         
        <?php include('footer.php') ?>

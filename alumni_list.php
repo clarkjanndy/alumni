@@ -70,23 +70,23 @@ header.masthead,header.masthead:before {
         <header class="masthead">
             <div class="container-fluid h-100">
                 <div class="row h-100 align-items-center justify-content-center text-center">
-                    <div class="col-lg-8 align-self-end mb-4 page-title">
+                    <div class="col-lg-8 align-self-end mb-5 page-title">
                         <h3 class="text-white">Alumnus/Alumnae List</h3>
-                        <hr class="divider my-4" />
+                        <!-- <hr class="divider my-4" /> -->
 
-                    <div class="col-md-12 mb-2 justify-content-center">
-                    </div>                        
+                    <!-- <div class="col-md-12 mb-2 justify-content-center">
+                    </div>                         -->
                     </div>
                     
                 </div>
             </div>
         </header>
-        	<div class="container-fluid px-4">
-        		<div class="card mb-4 mt-4">
-		        <div class="card-body">
+        	<div class="container-fluid bg-theme">
+        		<div class="card">
+		        <div class="card-body bg-theme">
 		            <div class="row">
 		                <div class="col-md-8">
-		                    <div class="input-group mb-3">
+		                    <div class="input-group">
 		                      <div class="input-group-prepend">
 		                        <span class="input-group-text" id="filter-field"><i class="fa fa-search"></i></span>
 		                      </div>
@@ -101,7 +101,7 @@ header.masthead,header.masthead:before {
 		        </div>
 		    </div>
         	</div>	
-            <div class="container-fluid mt-3 pt-2">
+            <div class="container-fluid pt-2 bg-theme">
                
                 <div class="row-items">
                 <div class="col-lg-12">

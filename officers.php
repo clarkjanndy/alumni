@@ -45,9 +45,9 @@
               </div>
           </header>
 
-      <section class="page-section">
-          <div class="container">
-          <h3 class="officerheader text-center my-5">Buenavista Community College<br><br>Alumni Officers</h3>
+      <section class="">
+          <div class="container-fluid bg-theme">
+          <h3 class="officerheader text-center p-5">Buenavista Community College<br><br>Alumni Officers</h3>
 
         <div class="Officerinfo container text-center">
           <div class="row">

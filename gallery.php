@@ -72,7 +72,7 @@ header.masthead,header.masthead:before {
                 </div>
             </div>
         </header>
-            <div class="container-fluid mt-3 pt-2">
+            <div class="container-fluid pt-2 bg-theme">
                
                 <div class="row-items">
                 <div class="col-lg-12">

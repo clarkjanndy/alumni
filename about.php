@@ -10,9 +10,9 @@
             </div>
         </header>
 
-    <section class="page-section">
-        <div class="container">
-    <?php echo html_entity_decode($_SESSION['system']['about_content']) ?>        
+    <section class="">
+        <div class="container-fluid bg-theme p-5">
+        <?php echo html_entity_decode($_SESSION['system']['about_content']) ?>        
             
         </div>
         </section>

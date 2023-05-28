@@ -51,11 +51,11 @@ span.hightlight{
    min-height: calc(100%)
 }
 </style>
-        <header class="masthead" style="height:100vh;">
+        <header class="masthead" style="height: 100vh;">
             <div class="container-fluid h-100">
                 <div class="row h-100 align-items-center justify-content-center text-center">
                     <div class="col-lg-8 align-self-center  page-title">
-                    	<h3 class="text-white">WELCOME TO <?php echo $_SESSION['system']['name']; ?></h3>
+                    	<h1 class="text-white">WELCOME TO <?php echo $_SESSION['system']['name']; ?></h1>
                         <hr class="divider my-4" />
                     <div class="col-md-12 mb-2 justify-content-center">
                     </div>                        
@@ -64,11 +64,11 @@ span.hightlight{
                 </div>
             </div>
         </header>
-            <div class="container mt-3 pt-2">
+
+        <div class="container-fluid pt-2 bg-theme">
             
-                <h4 class="text-center text-white">Upcoming Events</h4>
-                <hr class="divider">
-                <div class="container-fluid row">
+                <h4 class="text-center text-theme mt-3">Upcoming Events</h4>
+                <div class="container-fluid row ">
                 <?php
                 $event = $conn->query("SELECT * FROM events where date_format(schedule,'%Y-%m%-d') >= '".date('Y-m-d')."' order by unix_timestamp(schedule) asc");
                 while($row = $event->fetch_assoc()):
@@ -104,7 +104,7 @@ span.hightlight{
                 <?php endwhile; ?>
                 
                 </div>  
-            </div>
+        </div>
 
 
 <script>

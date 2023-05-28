@@ -60,7 +60,7 @@
 					</div>
 				<?php }else{ ?>
 					<div class="alert alert-info">
-					<strong>Information!</strong> There is nothing to upload.
+					<strong>Opps!</strong> There is nothing to upload.
 					</div>
 				<?php	
 					}
