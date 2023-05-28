@@ -15,24 +15,58 @@
 			<div class="col-md-12">
 				<div class="card">
 					<div class="card-header">
-						<b>List of Alumni</b>
-						<div class="search-form float-right">
-							<form method="POST" class="form-inline">
-								<select name="search_batch" class="form-control">
-										<option></option>
-									<?php foreach(mysqli_query($conn,"SELECT DISTINCT batch FROM alumnus_bio") as $batches){
-											echo "<option>".$batches['batch']."</option>";
-									} ?>
-								</select>
-								<button type="submit" name="search" class="btn btn-warning"> <i class="fa fa-search"></i> </button>
-								<a href="index.php?page=admin_signup" class="btn btn-primary ml-3"><i class=""></i>Add Alumni</a>
-								<!-- <button class="btn btn-primary ml-3" onclick="ImportData()">Import from Excel</button> -->
-							</form>
-						
+						<b>List of Alumni	</b>
+						<div class="search-form d-flex justify-content-end">
+							<div>
+								<form method="POST" class="form-inline mb-2">
+									<select name="search_batch" class="form-control">
+											<option></option>
+										<?php foreach(mysqli_query($conn,"SELECT DISTINCT batch FROM alumnus_bio") as $batches){
+												echo "<option>".$batches['batch']."</option>";
+										} ?>
+									</select>
+									<button type="submit" name="search" class="btn btn-warning"> <i class="fa fa-search"></i> </button>
+									<a href="index.php?page=admin_signup" class="btn btn-primary ml-3"><i class=""></i>Add Alumni</a>
+									<!-- <button class="btn btn-primary ml-3" onclick="ImportData()">Import from Excel</button> -->
+								</form>
+
+								<form method="POST" class="" action="process_csv.php" enctype="multipart/form-data">
+									<div class="form-group">
+										<label for="" class="control-label">Import from File: </label>
+										<input type="file" class="form-control" name="csv_file" onchange="this.form.submit()"
+										accept=".csv" required>
+										
+									</div>
+								</form>	
+							</div>
 						</div>
 						<!-- <span class="float:right"><a class="btn btn-primary btn-block btn-sm col-sm-2 float-right" href="index.php?page=manage_alumni" id="new_alumni">
 					<i class="fa fa-plus"></i> New Entry
 				</a></span> -->
+
+				<?php if(isset($_SESSION['error'])){ ?>
+					<div class="alert alert-danger">
+						<strong>Falied!</strong> Error in reading csv file. Please upload the right format.
+					</div>
+				<?php	
+					unset($_SESSION['error']);
+				}?>
+				
+				<?php if(isset($_SESSION['num_entries'])){ 
+					if($_SESSION['num_entries'] > 0){
+				?>
+					<div class="alert alert-success">
+						<strong>Success!</strong> <?php echo $_SESSION['num_entries']. ' Alumnis created successfully.'?>
+					</div>
+				<?php }else{ ?>
+					<div class="alert alert-info">
+					<strong>Information!</strong> There is nothing to upload.
+					</div>
+				<?php	
+					}
+					unset($_SESSION['num_entries']);
+				}?>
+				
 					</div>
 					<div class="card-body small">
 						<table class="table table-condensed table-bordered table-hover">
