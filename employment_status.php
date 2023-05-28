@@ -58,16 +58,16 @@ if(isset($_GET['delete'])){
                     	<h3 class="text-white">EMPLOYMENT STATUS</h3>
                         <hr class="divider my-4" />
 
-                    <div class="col-md-12 mb-2 justify-content-center">
-                    </div>                        
+                    <!-- <div class="col-md-12 mb-2 justify-content-center">
+                    </div>                         -->
                     </div>
                     
                 </div>
             </div>
-        </header><br>
+        </header>
 
 
-<div class="container">
+<div class="container-fluid p-4 bg-theme">
     <div class="row justify-content-center text-center">
         <div class="col-md-3">
             <div class="card text-left">

@@ -59,7 +59,7 @@ header.masthead,header.masthead:before {
         </div>
     </div>
 </header>
-<div class="container mt-3 pt-2">
+<div class="container-fluid bg-theme p-4">
     <div class="card mb-4">
         <div class="card-body">
             <div class="row">
@@ -114,7 +114,7 @@ header.masthead,header.masthead:before {
                      <span class="badge badge-secondary float-left px-3 pt-1 pb-1 ml-2">
                         <b><i class="fa fa-comments"></i> <i><?php echo $count_comments ?> Comments</i></b>
                     </span>
-                    <button class="btn btn-primary float-right view_topic" data-id="<?php echo $row['id'] ?>">View Topic</button>
+                    <button class="btn btn-sm btn-primary float-right view_topic" data-id="<?php echo $row['id'] ?>">View Topic</button>
                 </div>
             </div>
             

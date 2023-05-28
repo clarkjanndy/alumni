@@ -50,14 +50,34 @@ header.masthead,header.masthead:before {
         <div class="row h-100 align-items-center justify-content-center text-center">
             <div class="col-lg-8 align-self-end mb-4 page-title">
                 <h3 class="text-white">JOB OPPORTUNITIES</h3>
-                <hr class="divider my-4" />
+                <!-- <hr class="divider my-4" /> -->
                
             </div>
             
         </div>
     </div>
 </header>
-<div class="container mt-3 pt-2">
+<div class="container-fluid p-4 bg-theme">
+
+<div class="card mb-4">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="input-group mb-3">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text" id="filter-field"><i class="fa fa-search"></i></span>
+                      </div>
+                      <input type="text" class="form-control" placeholder="Filter" id="filter" aria-label="Filter" aria-describedby="filter-field">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <button class="btn btn-primary btn-block btn-sm" id="search">Search</button>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
    <?php
     $event = $conn->query("SELECT c.*,u.name from careers c inner join users u on u.id = c.user_id order by id desc");
     while($row = $event->fetch_assoc()):
@@ -91,7 +111,7 @@ header.masthead,header.masthead:before {
     </div>
     <br>
     <?php endwhile; ?>
-    <div class="card mb-4">
+    <!-- <div class="card mb-4">
         <div class="card-body">
             <div class="row">
                 <div class="col-md-8">
@@ -108,7 +128,7 @@ header.masthead,header.masthead:before {
             </div>
             
         </div>
-    </div>
+    </div> -->
 </div>
     
 </div>

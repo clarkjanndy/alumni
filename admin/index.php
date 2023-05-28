@@ -58,6 +58,18 @@
     max-width: calc(100%);
   }
 
+.bg-theme {
+    background-color: #D7E2EF;
+}
+
+.bg-theme-dark{
+  background: #4267B2;
+}
+
+.text-theme {
+   color: #4267B2;
+}
+
 </style>
 
 <body>
