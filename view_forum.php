@@ -75,7 +75,7 @@ header.masthead,header.masthead:before {
     </div>
   	<?php 
   	// echo "SELECT f.*,u.name,u.email FROM forum_comments f inner join users u on u.id = f.user_id where f.topic_id = $id order by f.id asc";
-  	$comments = $conn->query("SELECT f.*,u.name,u.username FROM forum_comments f inner join users u on u.id = f.user_id where f.topic_id = $id order by f.id asc");
+  	$comments = $conn->query("SELECT f.*,u.name,u.username, u.alumnus_id FROM forum_comments f inner join users u on u.id = f.user_id where f.topic_id = $id order by f.id asc");
   	?>
     <div class="card mb-4">
     	<div class="card-body">
@@ -86,6 +86,13 @@ header.masthead,header.masthead:before {
     			<hr class="divider" style="max-width: 100%">
     			<?php 
     			while($row= $comments->fetch_assoc()):
+                $bio_query = $conn->query("SELECT * FROM alumnus_bio WHERE id = "."'".$row['alumnus_id']."'");
+
+                if (mysqli_num_rows($bio_query) > 0){
+                    $avatar = $bio_query->fetch_assoc()['avatar'];
+                }else{
+                    $avatar = "1602730260_avatar.jpg";
+                }
     			?>
     			<div class="form-group comment">
                     <?php if($_SESSION['login_id'] == $row['user_id']): ?>
@@ -99,7 +106,7 @@ header.masthead,header.masthead:before {
                       </div>
                     </div>
                     <?php endif; ?>
-    				<p class="mb-0"><large><b><?php echo $row['name'] ?></b></large></p>
+    				<p class="mb-0"><img src="admin/assets/uploads/<?php echo $avatar?>" width=30 style="border-radius: 50%"><large> <b><?php echo $row['name'] ?></b></large></p>
     				<small class="mb-0"><i><?php echo $row['username'] ?></i></small>
     				<br>
     				<?php echo html_entity_decode($row['comment']) ?>
