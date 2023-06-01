@@ -262,9 +262,32 @@
                             </div>
                             </div>
                     <?php } ?>
+
+                    <div class="col-md-4">
+                        <div class="card m-1">
+                            <div class="card-header bg-primary text-white">
+                                Self Employed
+                            </div>
+                            <div class="card-body">
+                                <?php
+                                    $result = mysqli_query($conn, "SELECT position, COUNT(*) as count FROM employment_status WHERE status = 'Self-Employed' GROUP BY position"); 
+                                   
+                                ?>
+                                <table class='table table-sm'>
+
+                                <?php while ($row = $result->fetch_assoc()) {?>
+                                    <tr>
+                                        <td><?php echo $row["position"]?></td>
+                                        <td><?php echo $row["count"]?></td>
+                                    </tr>
+                                <?php }?>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
                     </div>
                 </div>
-            </div>
+            </>
         </div>
     </div>
 </div>
