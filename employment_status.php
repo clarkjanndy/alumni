@@ -77,17 +77,17 @@ if(isset($_GET['delete'])){
                 <div class="card-body">
                         
                         <form method="POST">
-                            Current Agency/Business Name<input type="text" name="current_company" class="form-control" value="<?php echo $company; ?>">
+                            Current Agency/Business Name<input type="text" name="current_company" class="form-control" value="<?php echo $company; ?>" id="agency">
                             Current Position<input type="text" name="current_position" class="form-control" value="<?php echo $position; ?>">
-                            Address<input type="text" name="contact_info" class="form-control" value="<?php echo $contact_info; ?>">
+                            Address<input type="text" name="contact_info" class="form-control" value="<?php echo $contact_info; ?>" id="address">
                             Date Started<input type="date" name="date_started" class="form-control" value="<?php echo $date_started; ?>">
-                            Sector<select class="form-control" name="sector">
+                            Sector<select class="form-control" name="sector" id="sector">
                                 <option></option>
                                 <option <?php if($sector == "Government"){ echo "selected";} ?>>Government</option>
                                 <option <?php if($sector == "Private"){ echo "selected";} ?>>Private</option>
                                 <option <?php if($sector == "NGO"){ echo "selected";} ?>>NGO</option>
                             </select>
-                            Status<select class="form-control" name="status" aria-label="Ngano">
+                            Status<select class="form-control" name="status" aria-label="Ngano" id="status_dropdown">
                                 <option></option>
                                 <option <?php if($status == "Permanent"){ echo "selected";} ?> >Permanent/Regular</option>
                                 <option <?php if($status == "Temporary"){ echo "selected";} ?> >Temporary</option>
@@ -143,3 +143,75 @@ if(isset($_GET['delete'])){
         </div>
     </div>
 </div>
+
+<!-- Modal -->
+<div class="modal fade" id="self-employed-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Bussines Details</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+            <div class="form-group">
+                <label>Business Type:</label>
+                <input class="form-control" type="text" required id="bussiness_type">
+            </div>
+
+            <div class="form-group">
+                <label>Business Name:</label>
+                <input class="form-control" type="text" required id="bussiness_name">
+            </div>
+
+            <div class="form-group">
+                <label>Business Address:</label>
+                <input class="form-control" type="text" required id="bussiness_address">
+            </div>
+
+       
+      </div>
+      <div class="modal-footer">
+            <button type="submit" class="btn btn-primary" id="save_changes">Save changes</button>
+        </form>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script>
+    $(document).ready(function() {
+        // Listen for change event on the dropdown
+        $('#status_dropdown').change(function() {
+            var selectedOption = $(this).val();
+            
+            // Check if the selected option should trigger the modal
+            if (selectedOption === 'Self-Employed') {
+            // Open the modal
+            $('#self-employed-modal').modal('show');
+            }
+        });
+
+         // Listen for change event on the dropdown
+         $('#save_changes').click(function(evt) {  
+            evt.preventDefault()
+
+            $('#agency').val($('#bussiness_name').val())
+            $('#address').val($('#bussiness_address').val())
+
+            // Create the new option element
+            var newOption = $('<option></option>').val($('#bussiness_type').val()).text($('#bussiness_type').val());
+            // Append the new option to the select field
+            $('#sector').append(newOption);
+            // Set the new option as selected
+            newOption.prop('selected', true);
+
+            $('#self-employed-modal').modal('hide');
+            
+        });
+    });
+</script>
