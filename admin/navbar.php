@@ -10,7 +10,7 @@
 
 <nav id="sidebar" class='mx-lt-5 bg-dark' >
 		
-		<div class="sidebar-list">
+		<div class="sidebar-list" style="overflow-y: auto">
 				<a href="index.php?page=home" class="nav-item nav-home"><span class='icon-field'><i class="fa fa-home"></i></span> Home</a>
 				<a href="index.php?page=gallery" class="nav-item nav-gallery"><span class='icon-field'><i class="fa fa-image"></i></span> Gallery </a>
 				<a href="index.php?page=courses" class="nav-item nav-courses"><span class='icon-field'><i class="fa fa-list"></i></span> Course List</a>
